@@ -3,11 +3,15 @@ import static codigo.Tokens.*;
 
 %%
 %class Lexer
-%ignorecase
 %type Tokens
+%unicode
+%line
+
 L=[a-zA-Z]+
 D=[0-9]+
 espacio=[ ,\t,\r,\n]+
+CA="\""[^\"\n]*"\"" | "\"""\""
+
 %{
     public String lexeme;
 %}
@@ -56,6 +60,15 @@ OR {lexeme=yytext(); return Or;}
 ":=" {lexeme=yytext(); return DosPuntosIgual;}
 
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
-("(-"{D}+")")|{D}+ {lexeme=yytext(); return Enteros;}
-("(-"{D}+")")|{D}+|({D}+"."{D}+) {lexeme=yytext(); return Reales;}
+{D}+ {lexeme=yytext(); return Enteros;}
+({D}+"."{D}+) {lexeme=yytext(); return Reales;}
+"."{D}+ {lexeme=yytext(); return Reales;}
+{CA}+ {lexeme=yytext(); return Cadena;}
+{D}{L}+ {lexeme=yytext(); return ERROR;}
+{L}+"."+({L}|{D})* {lexeme=yytext(); return ERROR;}
+{L}{D}"."+({L}|{D})* {lexeme=yytext(); return ERROR;}
+".""."+({L}|{D})* {lexeme=yytext(); return ERROR;}
+"."+{L}+{D}* {lexeme=yytext(); return ERROR;}
+"."+{D}*{L}+ {lexeme=yytext(); return ERROR;}
+"\""[^\"\n]* {lexeme=yytext(); return ERROR;}
  . {return ERROR;}

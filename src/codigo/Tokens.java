@@ -51,5 +51,6 @@ public enum Tokens {
     Identificador,
     Enteros,
     Reales,
+    Cadena,
     ERROR
 }
