@@ -1,4 +1,4 @@
-package codigo;
+package lexer;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

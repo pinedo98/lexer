@@ -1,11 +1,11 @@
-package codigo;
+package lexer;
 
 import java.io.File;
 
 public class Generador {
 
   public static void main(String[] args) {
-    String ruta = "src/codigo/Lexer.flex";
+    String ruta = "src/lexer/Lexer.flex";
     generarLexer(ruta);
   }
 
