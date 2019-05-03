@@ -4,13 +4,21 @@ import static lexer.Tokens.*;
 %%
 %class Lexer
 %type Tokens
-%unicode
 %line
+%unicode
 
 L=[a-zA-Z]+
 D=[0-9]+
 espacio=[ ,\t,\r,\n]+
 CA="\""[^\"\n]*"\"" | "\"""\""
+
+
+%{
+    public int getLine() {
+    return yyline;
+    }
+%}
+
 
 %{
     public String lexeme;

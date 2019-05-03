@@ -1,66 +1,64 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lexer;
 
-/**
- * @author luis1
- */
 public enum Tokens {
-  Prog(-1),
-  Var(-5),
-  Proc(-5),
-  Inicio(-5),
-  Final(-5),
-  Entero(-5),
-  Real(-5),
-  String(-5),
-  Limpiar(-5),
-  Vexy(-5),
-  Leer(-5),
-  Escribir(-5),
-  Repite(-5),
-  Hasta(-5),
-  Mientras(-5),
-  Si(-5),
-  SiNo(-5),
-  Ejecuta(-5),
-  And(-5),
-  Or(-5),
-  Suma(-5),
-  Resta(-5),
-  Multiplicacion(-5),
-  Division(-5),
-  Igual(-5),
-  MayorIgual(-5),
-  Mayor(-5),
-  MenorIgual(-5),
-  Menor(-5),
-  Diferente(-5),
-  PuntoYComa(-5),
-  CierraCorchete(-5),
-  AbreCorchete(-5),
-  Coma(-5),
-  DosPuntos(-5),
-  CierraParentesis(-5),
-  AbreParentesis(-5),
-  DosPuntosIgual(-5),
-  Identificador(-5),
-  Enteros(-5),
-  Reales(-5),
-  Cadena(-5),
-  ERROR(-5);
+  Prog(-1, -1),
+  Var(-5, -1),
+  Proc(-5, -1),
+  Inicio(-5, -1),
+  Final(-5, -1),
+  Entero(-5, -1),
+  Real(-5, -1),
+  String(-5, -1),
+  Limpiar(-5, -1),
+  Vexy(-5, -1),
+  Leer(-5, -1),
+  Escribir(-5, -1),
+  Repite(-5, -1),
+  Hasta(-5, -1),
+  Mientras(-5, -1),
+  Si(-5, -1),
+  SiNo(-5, -1),
+  Ejecuta(-5, -1),
+  And(-5, -1),
+  Or(-5, -1),
+  Suma(-5, -1),
+  Resta(-5, -1),
+  Multiplicacion(-5, -1),
+  Division(-5, -1),
+  Igual(-5, -1),
+  MayorIgual(-5, -1),
+  Mayor(-5, -1),
+  MenorIgual(-5, -1),
+  Menor(-5, -1),
+  Diferente(-5, -1),
+  PuntoYComa(-5, -1),
+  CierraCorchete(-5, -1),
+  AbreCorchete(-5, -1),
+  Coma(-5, -1),
+  DosPuntos(-5, -1),
+  CierraParentesis(-5, -1),
+  AbreParentesis(-5, -1),
+  DosPuntosIgual(-5, -1),
+  Identificador(-5, -1),
+  Enteros(-5, -1),
+  Reales(-5, -1),
+  Cadena(-5, -1),
+  ERROR(-5, -1);
 
 
-  private int numVal;
+  private int number;
+  private int tablePosition;
 
-  Tokens(int numVal) {
-    this.numVal = numVal;
+  Tokens(int number, int tablePosition) {
+    this.number = number;
+    this.tablePosition = tablePosition;
   }
 
-  public int getNumVal() {
-    return numVal;
+  public int getNumber() {
+    return number;
+  }
+
+  public int getTablePosition() {
+    return tablePosition;
   }
 }
