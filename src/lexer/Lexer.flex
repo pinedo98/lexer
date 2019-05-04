@@ -12,13 +12,11 @@ D=[0-9]+
 espacio=[ ,\t,\r,\n]+
 CA="\""[^\"\n]*"\"" | "\"""\""
 
-
 %{
     public int getLine() {
     return yyline;
     }
 %}
-
 
 %{
     public String lexeme;
@@ -73,10 +71,13 @@ OR {lexeme=yytext(); return Or;}
 "."{D}+ {lexeme=yytext(); return Reales;}
 {CA}+ {lexeme=yytext(); return Cadena;}
 {D}{L}+ {lexeme=yytext(); return ERROR;}
-{L}+"."+({L}|{D})* {lexeme=yytext(); return ERROR;}
+{L}+"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
+{D}+"."+{D}+"."+[^\n" "]* {lexeme=yytext(); return ERROR;}
+{D}+"."+[^\n" "]*+"."+[^\n" "]* {lexeme=yytext(); return ERROR;}
 {L}{D}"."+({L}|{D})* {lexeme=yytext(); return ERROR;}
 ".""."+({L}|{D})* {lexeme=yytext(); return ERROR;}
 "."+{L}+{D}* {lexeme=yytext(); return ERROR;}
 "."+{D}*{L}+ {lexeme=yytext(); return ERROR;}
 "\""[^\"\n]* {lexeme=yytext(); return ERROR;}
+"\""([^\"\n]|"\\""\"")*"\"" {lexeme=yytext(); return Cadena;}
  . {return ERROR;}

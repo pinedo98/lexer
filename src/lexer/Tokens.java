@@ -49,7 +49,7 @@ public enum Tokens {
   Enteros(-62, -1),
   Reales(-63, -1),
   Cadena(-64, -1),
-  ERROR(-65, -1);
+  ERROR(-100, -1);
 
 
   private int number;
