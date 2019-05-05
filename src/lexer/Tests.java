@@ -14,7 +14,7 @@ import org.junit.Test;
 public class Tests {
 
   @Test
-  public void palabrasClave() throws IOException {
+  public void palabrasClave() {
     Reader reader = new StringReader(
         "PROG VAR PROC INICIO FIN ENTERO REAL STRING LIMPIAR VEXY LEER ESCRIBIR REPITE HASTA MIENTRAS SI SINO EJECUTA AND OR");
     List<Token> actualTokens = getTokens(reader);
@@ -44,7 +44,7 @@ public class Tests {
   }
 
   @Test
-  public void errorConMultiplesPuntosDecimales() throws FileNotFoundException {
+  public void errorConMultiplesPuntosDecimales() {
     Reader reader = new StringReader("2.6.5");
     List<Token> actualTokens = getTokens(reader);
     System.out.println(actualTokens);
