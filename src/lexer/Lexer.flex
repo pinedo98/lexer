@@ -9,8 +9,10 @@ import static lexer.Tokens.*;
 
 L=[a-zA-Z]+
 D=[0-9]+
-espacio=[ ,\t,\r,\n]+
+espacio=[ \t\r\n]+
 CA="\""[^\"\n]*"\"" | "\"""\""
+
+
 
 %{
     public int getLine() {
