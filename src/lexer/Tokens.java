@@ -20,9 +20,8 @@ public enum Tokens {
   Si(-16, -1),
   SiNo(-17, -1),
   Ejecuta(-18, -1),
-
-  And(-21, -1),
-  Or(-22, -1),
+  And(-19, -1),
+  Or(-20, -1),
 
   Suma(-31, -1),
   Resta(-32, -1),
