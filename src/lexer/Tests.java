@@ -1,6 +1,7 @@
 package lexer;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -23,39 +24,50 @@ public class Tests {
   }
 
   @Test
-  public void constantes() throws IOException {
+  public void constantes() {
     List<Token> expectedTokens = new ArrayList<>();
     expectedTokens.add(Token.Cadena);
     expectedTokens.add(Token.Enteros);
     expectedTokens.add(Token.Reales);
-    expectedTokens.add(Token.ERROR);
 
-    Reader reader = new StringReader("\"cadena\" 5313 1512.65 156.36.55");
+    Reader reader = new StringReader("\"cadena\" 5313 1512.65");
     List<Token> actualTokens = getTokens(reader);
     Assert.assertEquals(expectedTokens, actualTokens);
   }
 
   @Test
-  public void codigoCompleto() throws IOException {
+  public void codigoCompleto() throws FileNotFoundException {
     Reader reader = new BufferedReader(new FileReader("pruebas/codigo-completo.txt"));
     List<Token> actualTokens = getTokens(reader);
     System.out.println(actualTokens);
     Assert.assertFalse(actualTokens.contains(Token.ERROR));
   }
 
-  private List<Token> getTokens(Reader reader) throws IOException {
+  @Test
+  public void errorConMultiplesPuntosDecimales() throws FileNotFoundException {
+    Reader reader = new StringReader("2.6.5");
+    List<Token> actualTokens = getTokens(reader);
+    System.out.println(actualTokens);
+    Assert.assertTrue(actualTokens.contains(Token.ERROR));
+  }
+
+  private List<Token> getTokens(Reader reader) {
     Lexer lexer = new Lexer(reader);
 
     List<Token> tokens = new ArrayList<>();
-    while (true) {
-      Token token = lexer.yylex();
-      if (token == null) {
-        break;
+    try {
+      while (true) {
+        Token token = lexer.yylex();
+        if (token == null) {
+          reader.close();
+          break;
+        }
+        tokens.add(token);
+        System.out.println(token);
       }
-      tokens.add(token);
-      System.out.println(token);
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-    reader.close();
     return tokens;
   }
 }
