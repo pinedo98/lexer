@@ -42,7 +42,7 @@ HASTA {lexeme=yytext(); return Hasta;}
 MIENTRAS {lexeme=yytext(); return Mientras;}
 SI {lexeme=yytext(); return Si;}
 SINO {lexeme=yytext(); return SiNo;}
-EJCUTA {lexeme=yytext(); return Ejecuta;}
+EJECUTA {lexeme=yytext(); return Ejecuta;}
 AND {lexeme=yytext(); return And;}
 OR {lexeme=yytext(); return Or;}
 {espacio} {/*Ignore*/}
