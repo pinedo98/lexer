@@ -1,6 +1,6 @@
 package lexer;
 
-public enum Tokens {
+public enum Token {
   // palabras reservadas
   Prog(-1, -1),
   Var(-2, -1),
@@ -54,7 +54,7 @@ public enum Tokens {
   private int number;
   private int tablePosition;
 
-  Tokens(int number, int tablePosition) {
+  Token(int number, int tablePosition) {
     this.number = number;
     this.tablePosition = tablePosition;
   }

@@ -27,7 +27,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" spacing="5.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label text="Tabla de tokens" textFill="#4a4a4a" VBox.vgrow="ALWAYS">
+                  <Label text="Tabla de token" textFill="#4a4a4a" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="Roboto Medium" size="24.0" />
                      </font>

@@ -16,39 +16,39 @@ public class Tests {
   public void palabrasClave() throws IOException {
     Reader reader = new StringReader(
         "PROG VAR PROC INICIO FIN ENTERO REAL STRING LIMPIAR VEXY LEER ESCRIBIR REPITE HASTA MIENTRAS SI SINO EJECUTA AND OR");
-    List<Tokens> actualTokens = getTokens(reader);
-    Assert.assertTrue(actualTokens.stream().allMatch(tokens ->
-        tokens.getNumber() <= -1 && tokens.getNumber() >= -20)
+    List<Token> actualTokens = getTokens(reader);
+    Assert.assertTrue(actualTokens.stream().allMatch(token ->
+        token.getNumber() <= -1 && token.getNumber() >= -20)
     );
   }
 
   @Test
   public void constantes() throws IOException {
-    List<Tokens> expectedTokens = new ArrayList<>();
-    expectedTokens.add(Tokens.Cadena);
-    expectedTokens.add(Tokens.Enteros);
-    expectedTokens.add(Tokens.Reales);
-    expectedTokens.add(Tokens.ERROR);
+    List<Token> expectedTokens = new ArrayList<>();
+    expectedTokens.add(Token.Cadena);
+    expectedTokens.add(Token.Enteros);
+    expectedTokens.add(Token.Reales);
+    expectedTokens.add(Token.ERROR);
 
     Reader reader = new StringReader("\"cadena\" 5313 1512.65 156.36.55");
-    List<Tokens> actualTokens = getTokens(reader);
+    List<Token> actualTokens = getTokens(reader);
     Assert.assertEquals(expectedTokens, actualTokens);
   }
 
   @Test
   public void codigoCompleto() throws IOException {
     Reader reader = new BufferedReader(new FileReader("pruebas/codigo-completo.txt"));
-    List<Tokens> actualTokens = getTokens(reader);
+    List<Token> actualTokens = getTokens(reader);
     System.out.println(actualTokens);
-    Assert.assertFalse(actualTokens.contains(Tokens.ERROR));
+    Assert.assertFalse(actualTokens.contains(Token.ERROR));
   }
 
-  private List<Tokens> getTokens(Reader reader) throws IOException {
+  private List<Token> getTokens(Reader reader) throws IOException {
     Lexer lexer = new Lexer(reader);
 
-    List<Tokens> tokens = new ArrayList<>();
+    List<Token> tokens = new ArrayList<>();
     while (true) {
-      Tokens token = lexer.yylex();
+      Token token = lexer.yylex();
       if (token == null) {
         break;
       }

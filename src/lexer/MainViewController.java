@@ -48,7 +48,7 @@ public class MainViewController {
       Lexer lexer = new Lexer(lector);
       String output = "";
       while (true) {
-        Tokens token = lexer.yylex();
+        Token token = lexer.yylex();
         if (token == null) {
           output += "Completado";
           txtOutput.setText(output);

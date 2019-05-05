@@ -1,9 +1,9 @@
 package lexer;
-import static lexer.Tokens.*;
+import static lexer.Token.*;
 
 %%
 %class Lexer
-%type Tokens
+%type Token
 %line
 %unicode
 
