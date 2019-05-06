@@ -48,6 +48,11 @@ public enum Token {
   Enteros(-62, -1),
   Reales(-63, -1),
   Cadena(-64, -1),
+  
+  LogicoAND(-71, -1),
+  LogicoOR(-72, -1),
+  Negacion(-73, -1),
+  
   ERROR(-100, -1);
 
 
