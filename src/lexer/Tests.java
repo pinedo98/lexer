@@ -51,6 +51,20 @@ public class Tests {
     Assert.assertTrue(actualTokens.contains(Token.ERROR));
   }
 
+  @Test
+  public void errorConUnaSolaComilla() {
+    Reader reader = new StringReader("\"");
+    List<Token> actualTokens = getTokens(reader);
+    Assert.assertTrue(actualTokens.contains(Token.ERROR));
+  }
+
+  @Test
+  public void errorIdentificadorConNumerosDePrefijo() {
+    Reader reader = new StringReader("15numero");
+    List<Token> actualTokens = getTokens(reader);
+    Assert.assertTrue(actualTokens.contains(Token.ERROR));
+  }
+
   private List<Token> getTokens(Reader reader) {
     Lexer lexer = new Lexer(reader);
 
