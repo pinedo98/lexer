@@ -70,7 +70,6 @@ OR {lexeme=yytext(); return Or;}
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 {D}+ {lexeme=yytext(); return Enteros;}
 ({D}+"."{D}+) {lexeme=yytext(); return Reales;}
-"."{D}+ {lexeme=yytext(); return Reales;}
 {CA}+ {lexeme=yytext(); return Cadena;}
 {D}{L}+ {lexeme=yytext(); return ERROR;}
 {L}+"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
