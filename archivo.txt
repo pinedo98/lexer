@@ -1,7 +1,1 @@
-public void initialize() {
-    txtInput.setOnKeyPressed(event -> {
-      if (event.getCode() == KeyCode.ENTER && event.isControlDown()) {
-        analyze();
-      }
-    });
-  }
+.

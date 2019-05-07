@@ -66,19 +66,20 @@ OR {lexeme=yytext(); return Or;}
 ")" {lexeme=yytext(); return CierraParentesis;}
 "(" {lexeme=yytext(); return AbreParentesis;}
 ":=" {lexeme=yytext(); return DosPuntosIgual;}
+"&&" {lexeme=yytext(); return LogicoAND;}
+"||" {lexeme=yytext(); return LogicoOR;}
+"!" {lexeme=yytext(); return Negacion;}
 
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 {D}+ {lexeme=yytext(); return Enteros;}
 ({D}+"."{D}+) {lexeme=yytext(); return Reales;}
 {CA}+ {lexeme=yytext(); return Cadena;}
-{D}{L}+ {lexeme=yytext(); return ERROR;}
+{D}{L}+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
 {L}+"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
-{D}+"."+{D}+"."+[^\n" "]* {lexeme=yytext(); return ERROR;}
-{D}+"."+[^\n" "]*+"."+[^\n" "]* {lexeme=yytext(); return ERROR;}
-{L}{D}"."+({L}|{D})* {lexeme=yytext(); return ERROR;}
-".""."+({L}|{D})* {lexeme=yytext(); return ERROR;}
-"."+{L}+{D}* {lexeme=yytext(); return ERROR;}
-"."+{D}*{L}+ {lexeme=yytext(); return ERROR;}
+{D}+"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
+{L}{D}"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
+".""."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
+"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
 "\""[^\"\n]* {lexeme=yytext(); return ERROR;}
 "\""([^\"\n]|"\\""\"")*"\"" {lexeme=yytext(); return Cadena;}
  . {return ERROR;}
