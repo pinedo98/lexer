@@ -9,6 +9,8 @@ import static lexer.Token.*;
 
 L=[a-zA-Z]+
 D=[0-9]+
+LU=[a-zA-Z]
+DU=[0-9]
 espacio=[ \t\r\n]+
 CA="\""[^\"\n]*"\"" | "\"""\""
 
@@ -70,7 +72,7 @@ OR {lexeme=yytext(); return Or;}
 "||" {lexeme=yytext(); return LogicoOR;}
 "!" {lexeme=yytext(); return Negacion;}
 
-{L}({L}|{D})* {lexeme=yytext(); return Identificador;}
+{LU}({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU}) {lexeme=yytext(); return Identificador;}
 {D}+ {lexeme=yytext(); return Enteros;}
 ({D}+"."{D}+) {lexeme=yytext(); return Reales;}
 {CA}+ {lexeme=yytext(); return Cadena;}
@@ -81,5 +83,6 @@ OR {lexeme=yytext(); return Or;}
 ".""."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
 "."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
 "\""[^\"\n]* {lexeme=yytext(); return ERROR;}
+{LU}({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})[^\"\n]* {lexeme=yytext(); return ERROR;}
 "\""([^\"\n]|"\\""\"")*"\"" {lexeme=yytext(); return Cadena;}
  . {return ERROR;}

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ""variable
+=======
+abc123s6d5f4a6s5d4f
+>>>>>>> 7409e6dde14a0ac6eb8d683d3cd086c1523fe5f6
