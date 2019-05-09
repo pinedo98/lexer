@@ -51,6 +51,9 @@ OR {lexeme=yytext(); return Or;}
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
 "\\".* {/*Ignore*/}
+" . " {/*Ignore*/}
+". " {/*Ignore*/}
+" ." {/*Ignore*/}
 "+" {lexeme=yytext(); return Suma;}
 "-" {lexeme=yytext(); return Resta;}
 "*" {lexeme=yytext(); return Multiplicacion;}
@@ -82,8 +85,12 @@ OR {lexeme=yytext(); return Or;}
 {D}+"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
 {L}{D}"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
 ".""."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
-"."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
+"."+({L}|{D}|".")+ {lexeme=yytext(); return ERROR;}
 "\""[^\"\n]* {lexeme=yytext(); return ERROR;}
+[^\"\n" "]+"\"" {lexeme=yytext(); return ERROR;}
+"|" {lexeme=yytext(); return ERROR;}
+"&" {lexeme=yytext(); return ERROR;}
+"|" {lexeme=yytext(); return ERROR;}
 {LU}({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})[^\"\n" "]* {lexeme=yytext(); return ERROR;}
 "\""([^\"\n]|"\\""\"")*"\"" {lexeme=yytext(); return Cadena;}
- . {return ERROR;}
+ . {lexeme=yytext(); return ERROR;}
