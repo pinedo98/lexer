@@ -13,6 +13,7 @@ LU=[a-zA-Z]
 DU=[0-9]
 espacio=[ \t\r\n]+
 CA="\""[^\"\n]*"\"" | "\"""\""
+LorD = {LU}|{DU}
 
 
 
@@ -72,7 +73,7 @@ OR {lexeme=yytext(); return Or;}
 "||" {lexeme=yytext(); return LogicoOR;}
 "!" {lexeme=yytext(); return Negacion;}
 
-{LU}({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU}) {lexeme=yytext(); return Identificador;}
+{LU}{LorD}{0, 5} {lexeme=yytext(); return Identificador;}
 {D}+ {lexeme=yytext(); return Enteros;}
 ({D}+"."{D}+) {lexeme=yytext(); return Reales;}
 {CA}+ {lexeme=yytext(); return Cadena;}
