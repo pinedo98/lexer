@@ -84,6 +84,6 @@ OR {lexeme=yytext(); return Or;}
 ".""."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
 "."+({L}|{D}|".")* {lexeme=yytext(); return ERROR;}
 "\""[^\"\n]* {lexeme=yytext(); return ERROR;}
-{LU}({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})[^\"\n]* {lexeme=yytext(); return ERROR;}
+{LU}({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})({LU}|{DU})[^\"\n" "]* {lexeme=yytext(); return ERROR;}
 "\""([^\"\n]|"\\""\"")*"\"" {lexeme=yytext(); return Cadena;}
  . {return ERROR;}
