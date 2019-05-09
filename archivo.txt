@@ -1,3 +1,0 @@
-inicio INICIO entero
-ENTERO + 89 / hg *5 
-AND or si SINO
