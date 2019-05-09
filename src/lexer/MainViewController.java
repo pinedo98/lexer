@@ -57,7 +57,7 @@ public class MainViewController {
           return;
         }
 
-        if (string.startsWith("\"") && string.endsWith("\"")) {
+        if (string.startsWith("\"") && string.endsWith("\"") && string.length() != 1) {
           string = string.substring(1, string.length() - 1);
         }
 
