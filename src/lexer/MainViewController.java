@@ -51,18 +51,18 @@ public class MainViewController {
         Token token = lexer.yylex();
         String string = lexer.lexeme;
 
-        if (string.startsWith("\"") && string.endsWith("\"")) {
-          string = string.substring(1, string.length() - 1);
-        }
-
-        string = string.replace("\\\"", "\"");
-
-
         if (token == null) {
           output += "Completado";
           txtOutput.setText(output);
           return;
         }
+
+        if (string.startsWith("\"") && string.endsWith("\"") && string.length() != 1) {
+          string = string.substring(1, string.length() - 1);
+        }
+
+        string = string.replace("\\\"", "\"");
+
         output += token +
             " (" + string + "," + token.getNumber() + "," + token.getTablePosition() + ","
             + (lexer.getLine() + 1) + ")\n";

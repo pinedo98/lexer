@@ -68,6 +68,8 @@ OR {lexeme=yytext(); return Or;}
 "]" {lexeme=yytext(); return CierraCorchete;}
 "[" {lexeme=yytext(); return AbreCorchete;}
 "," {lexeme=yytext(); return Coma;}
+"." {/* Ignore */}
+"\"" {/* Ignore */}
 ":" {lexeme=yytext(); return DosPuntos;}
 ")" {lexeme=yytext(); return CierraParentesis;}
 "(" {lexeme=yytext(); return AbreParentesis;}
