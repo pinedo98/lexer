@@ -49,13 +49,22 @@ public class MainViewController {
       String output = "";
       while (true) {
         Token token = lexer.yylex();
+        String string = lexer.lexeme;
+
+        if (string.startsWith("\"") && string.endsWith("\"")) {
+          string = string.substring(1, string.length() - 1);
+        }
+
+        string = string.replace("\\\"", "\"");
+
+
         if (token == null) {
           output += "Completado";
           txtOutput.setText(output);
           return;
         }
         output += token +
-            " (" + lexer.lexeme + "," + token.getNumber() + "," + token.getTablePosition() + ","
+            " (" + string + "," + token.getNumber() + "," + token.getTablePosition() + ","
             + (lexer.getLine() + 1) + ")\n";
       }
     } catch (IOException e) {
