@@ -61,6 +61,10 @@ public class MainViewController {
           string = string.substring(1, string.length() - 1);
         }
 
+        if (token.equals(Token.Comentario)) {
+          string = string.replace("\\\\", "");
+        }
+
         string = string.replace("\\\"", "\"");
 
         output += token +

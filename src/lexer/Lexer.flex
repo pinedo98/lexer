@@ -6,6 +6,7 @@ import static lexer.Token.*;
 %type Token
 %line
 %unicode
+%ignorecase
 
 L=[a-zA-Z]+
 D=[0-9]+
@@ -48,9 +49,10 @@ SINO {lexeme=yytext(); return SiNo;}
 EJECUTA {lexeme=yytext(); return Ejecuta;}
 AND {lexeme=yytext(); return And;}
 OR {lexeme=yytext(); return Or;}
+HOLA {lexeme=yytext(); return Hola;}
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
-"\\".* {/*Ignore*/}
+"\\".* {lexeme=yytext(); return Comentario;}
 " . " {/*Ignore*/}
 ". " {/*Ignore*/}
 " ." {/*Ignore*/}
@@ -90,6 +92,10 @@ OR {lexeme=yytext(); return Or;}
 "."+({L}|{D}|".")+ {lexeme=yytext(); return ERROR;}
 "\""[^\"\n]* {lexeme=yytext(); return ERROR;}
 [^\"\n" "]+"\"" {lexeme=yytext(); return ERROR;}
+"+""+"+ {lexeme=yytext(); return ERROR;}
+"-""-"+ {lexeme=yytext(); return ERROR;}
+"/""/"+ {lexeme=yytext(); return ERROR;}
+"*""*"+ {lexeme=yytext(); return ERROR;}
 "|" {lexeme=yytext(); return ERROR;}
 "&" {lexeme=yytext(); return ERROR;}
 "|" {lexeme=yytext(); return ERROR;}

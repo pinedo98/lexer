@@ -22,6 +22,7 @@ public enum Token {
   Ejecuta(-18, -1),
   And(-19, -1),
   Or(-20, -1),
+  Hola(-21, -1),
 
   Suma(-31, -1),
   Resta(-32, -1),
@@ -52,6 +53,8 @@ public enum Token {
   LogicoAND(-71, -1),
   LogicoOR(-72, -1),
   Negacion(-73, -1),
+
+  Comentario(-80, -1),
   
   ERROR(-100, -1);
 
