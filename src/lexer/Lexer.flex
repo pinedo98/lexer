@@ -6,7 +6,6 @@ import static lexer.Token.*;
 %type Token
 %line
 %unicode
-%ignorecase
 
 L=[a-zA-Z]+
 D=[0-9]+
@@ -29,7 +28,7 @@ LorD = {LU}|{DU}
 %}
 %%
 
-PROG {lexeme=yytext(); return Prog;}
+prog {lexeme=yytext(); return Prog;}
 VAR {lexeme=yytext(); return Var;}
 PROC {lexeme=yytext(); return Proc;}
 INICIO {lexeme=yytext(); return Inicio;}
