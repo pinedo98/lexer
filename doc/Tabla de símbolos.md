@@ -1,0 +1,43 @@
+### Tabla de símbolos o de direcciones
+
+- **Palabras reservadas**
+  - -1     **if**
+  - -2     **else**
+  - -3     **for**
+  - -4     **read **
+  - -5     **readln**
+- **Operadores aritméticos**
+  - -21     *
+  - -22     /
+  - -23     %
+  - -24     **+**
+  - -25     -
+  - -26     **=** 
+- **Operadores relacionales**
+  - -31     **<**
+  - -32     **\>**
+  - -33     **<=**
+  - -34     **\>=**
+  - -35     **==**
+  - -36     **!=**
+- **Operadores lógicos**
+  - -41     **||**
+  - -42     **&&**
+  - -43     **!**
+- **Identificadores**
+  - -51     **ID**
+  - -52     **ID_entero**
+  - -53     **ID_real**
+  - -54     **ID_String**
+  - -55     **ID_Rutina**
+- **Constantes**
+  - -61     **cte_enteras**
+  - -62     **cte_real**
+  - -63     **cte_String**
+- **Caracteres especiales**
+  - -71     **(**
+  - -72     **)**
+  - -73     **;**
+  - -74     **,**
+  - -75     **[**
+  - -76     **]**
