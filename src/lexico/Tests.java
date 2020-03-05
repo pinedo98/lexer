@@ -1,4 +1,4 @@
-package lexer;
+package lexico;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -66,22 +66,24 @@ public class Tests {
   }
 
   private List<Token> getTokens(Reader reader) {
-    Lexer lexer = new Lexer(reader);
-
-    List<Token> tokens = new ArrayList<>();
-    try {
-      while (true) {
-        Token token = lexer.yylex();
-        if (token == null) {
-          reader.close();
-          break;
-        }
-        tokens.add(token);
-        System.out.println(token);
-      }
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return tokens;
+    //    Lexer lexer = new Lexer(reader);
+    //
+    //    List<Token> tokens = new ArrayList<>();
+    //    try {
+    //      while (true) {
+    //        Token token = lexer.yylex();
+    //        if (token == null) {
+    //          reader.close();
+    //          break;
+    //        }
+    //        tokens.add(token);
+    //        System.out.println(token);
+    //      }
+    //    } catch (IOException e) {
+    //      e.printStackTrace();
+    //    }
+    //    return tokens;
+    //  }
+    return null;
   }
 }

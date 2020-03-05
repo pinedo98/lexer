@@ -1,4 +1,4 @@
-package lexer;
+package lexico;
 
 import java.net.URL;
 import javafx.application.Application;
@@ -17,8 +17,8 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    primaryStage.setTitle("Analizador Léxico");
-    primaryStage.getIcons().add(new Image("file:src/lexer/analyze.png"));
+    primaryStage.setTitle("Analizador Léxico de CFNG");
+    primaryStage.getIcons().add(new Image("file:src/lexico/pencil.png"));
     FXMLLoader fxmlLoader = new FXMLLoader(new URL(Main.class.getResource("MainView.fxml").toExternalForm()));
     Parent parent = fxmlLoader.load();
     primaryStage.setScene(new Scene(parent));

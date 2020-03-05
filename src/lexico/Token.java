@@ -1,4 +1,4 @@
-package lexer;
+package lexico;
 
 public enum Token {
   // palabras reservadas
@@ -6,7 +6,7 @@ public enum Token {
   Var(-2, -1),
   Proc(-3, -1),
   Inicio(-4, -1),
-  Final(-5, -1),
+  Fin(-5, -1),
   Entero(-6, -1),
   Real(-7, -1),
   String(-8, -1),
@@ -22,19 +22,18 @@ public enum Token {
   Ejecuta(-18, -1),
   And(-19, -1),
   Or(-20, -1),
-  Hola(-21, -1),
 
   Suma(-31, -1),
   Resta(-32, -1),
   Multiplicacion(-33, -1),
   Division(-34, -1),
-  Igual(-35, -1),
 
-  MayorIgual(-41, -1),
-  Mayor(-42, -1),
-  MenorIgual(-43, -1),
-  Menor(-44, -1),
-  Diferente(-45, -1),
+  Igual(-41, -1),
+  MayorIgual(-42, -1),
+  Mayor(-43, -1),
+  MenorIgual(-44, -1),
+  Menor(-45, -1),
+  Diferente(-46, -1),
 
   PuntoYComa(-51, -1),
   CierraCorchete(-52, -1),
