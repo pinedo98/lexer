@@ -23,8 +23,9 @@ public class MainViewController {
   public void initialize() {
     txtInput.setOnKeyPressed(event -> {
       if (event.getCode() == KeyCode.ENTER && event.isControlDown()) {
-      System.out.println(txtInput.getText() + event.getText());
-      analyze(txtInput.getText() + event.getText());
+        System.out.println(txtInput.getText() + event.getText());
+        analyze(txtInput.getText() + event.getText());
+        analyze(txtInput.getText() + event.getText());
       }
     });
   }
@@ -54,20 +55,18 @@ public class MainViewController {
           return;
         }
 
-        // si es una cadena de texto con comillas
-        if (string.startsWith("\"") && string.endsWith("\"") && string.length() != 1) {
-          string = string.substring(1, string.length() - 1); // quitar comillas para mostrar solo el texto
-        }
-
-        if (token.equals(Token.Comentario)) {
-          string = string.replace("\\\\", "");
-          continue;
-        }
+//        if (string.startsWith("\"") && string.endsWith("\"") && string.length() != 1) {
+//          string = string
+//              .substring(1, string.length() - 1); // quitar comillas para mostrar solo el texto
+//        }
+//
+//        if (token.equals(Token.Comentario)) {
+//          string = string.replace("//", "");
+//        }
 
         string = string.replace("\\\"", "\"");
 
-        output += token +
-            " (" + string + "," + token.getNumber() + "," + token.getTablePosition() + ","
+        output += token + " (" + string + ", " + token.getNumber() + ", " + token.getTablePosition() + ", "
             + (lexico.getLine() + 1) + ")\n";
       }
     } catch (IOException e) {

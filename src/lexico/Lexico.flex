@@ -49,8 +49,8 @@ proc {lexeme=yytext(); return proc;}
 
 
 {espacio} {/*Ignore*/}
-"//".* {/*Ignore*/}
-"\\".* {lexeme=yytext(); return Comentario;}
+"\\".* {/*Ignore*/}
+"//".* {lexeme=yytext(); return Comentario;}
 " . " {/*Ignore*/}
 ". " {/*Ignore*/}
 " ." {/*Ignore*/}
