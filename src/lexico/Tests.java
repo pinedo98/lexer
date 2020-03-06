@@ -66,12 +66,12 @@ public class Tests {
   }
 
   private List<Token> getTokens(Reader reader) {
-    //    Lexer lexer = new Lexer(reader);
+    //    Lexer lexico = new Lexico(reader);
     //
     //    List<Token> tokens = new ArrayList<>();
     //    try {
     //      while (true) {
-    //        Token token = lexer.yylex();
+    //        Token token = lexico.yylex();
     //        if (token == null) {
     //          reader.close();
     //          break;

@@ -9,8 +9,8 @@ import java.io.PrintWriter;
 import java.io.Reader;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
 import javafx.scene.shape.SVGPath;
 
 public class MainViewController {
@@ -21,36 +21,14 @@ public class MainViewController {
   @FXML
   private TextArea txtOutput;
 
-  @FXML
-  private SVGPath flecha1;
-
-  @FXML
-  private SVGPath flecha2;
-
 
   public void initialize() {
     txtInput.setOnKeyPressed(event -> {
-//      if (event.getCode() == KeyCode.ENTER && event.isControlDown()) {
+      if (event.getCode() == KeyCode.ENTER && event.isControlDown()) {
       System.out.println(txtInput.getText() + event.getText());
       analyze(txtInput.getText() + event.getText());
-//      }
+      }
     });
-
-    TranslateTransition transition = new TranslateTransition();
-    transition.setFromX(-10);
-    transition.setToX(10);
-    transition.setAutoReverse(true);
-    transition.setCycleCount(10000);
-    transition.setNode(flecha1);
-    transition.play();
-
-    TranslateTransition transition1 = new TranslateTransition();
-    transition1.setFromX(-10);
-    transition1.setToX(10);
-    transition1.setAutoReverse(true);
-    transition1.setCycleCount(10000);
-    transition1.setNode(flecha2);
-    transition1.play();
   }
 
   public void analyze(String text) {
@@ -73,7 +51,7 @@ public class MainViewController {
         String string = lexico.lexeme;
 
         if (token == null) {
-//          output += "Completado";
+          //          output += "Completado";
           txtOutput.setText(output);
           return;
         }

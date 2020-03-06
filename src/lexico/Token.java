@@ -6,7 +6,7 @@ public enum Token {
   Var(-2, -1),
   Proc(-3, -1),
   Inicio(-4, -1),
-  Fin(-5, -1),
+  Final(-5, -1),
   Entero(-6, -1),
   Real(-7, -1),
   String(-8, -1),
@@ -54,6 +54,8 @@ public enum Token {
   Negacion(-73, -1),
 
   Comentario(-80, -1),
+
+  Hola(1, 0),
   
   ERROR(-100, -1);
 

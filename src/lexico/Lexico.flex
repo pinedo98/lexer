@@ -1,8 +1,8 @@
-package lexer;
-import static lexer.Token.*;
+package lexico;
+import static lexico.Token.*;
 
 %%
-%class Lexer
+%class Lexico
 %type Token
 %line
 %unicode
@@ -28,7 +28,7 @@ LorD = {LU}|{DU}
 %}
 %%
 
-prog {lexeme=yytext(); return Prog;}
+Programa {lexeme=yytext(); return Prog;}
 VAR {lexeme=yytext(); return Var;}
 PROC {lexeme=yytext(); return Proc;}
 INICIO {lexeme=yytext(); return Inicio;}
