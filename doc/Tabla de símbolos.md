@@ -1,11 +1,24 @@
 ### Tabla de símbolos o de direcciones
 
 - **Palabras reservadas**
-  - -1     **if**
-  - -2     **else**
-  - -3     **for**
-  - -4     **read **
-  - -5     **readln**
+  - -1     **programa**
+  - -2     **inicio**
+  - -3     **fin**
+  - -4     **entrada**
+  - -5     **salida**
+  - -6     **entero**
+  - -7     **real**
+  - -8     **cadena**
+  - -9     **si**
+  - -10    **sino**  
+  - -11    **entonces**
+  - -12    **mientras**
+  - -13    **repetir**
+  - -14    **hasta**
+  - -15    **limpiar**
+  - -16    **ejecutar**
+  - -17    **posxy**  
+  - -18    **proc**
 - **Operadores aritméticos**
   - -21     *
   - -22     /
@@ -15,9 +28,9 @@
   - -26     **=** 
 - **Operadores relacionales**
   - -31     **<**
-  - -32     **\>**
+  - -32     **>**
   - -33     **<=**
-  - -34     **\>=**
+  - -34     **>=**
   - -35     **==**
   - -36     **!=**
 - **Operadores lógicos**
@@ -41,3 +54,8 @@
   - -74     **,**
   - -75     **[**
   - -76     **]**
+  - -77     **:**
+  - -78     **:=**
+  - -79     **{**
+  - -80     **}**
+  
