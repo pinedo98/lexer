@@ -11,25 +11,25 @@
    <children>
       <Label text="Creado por Fernando Pinedo y Jorge Contreras" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
          <font>
-            <Font name="Rockwell" size="14.0" />
+            <Font name="Roboto" size="17.0" />
          </font>
       </Label>
       <HBox alignment="CENTER" layoutX="51.0" layoutY="63.0" spacing="10.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
          <children>
             <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label style="-fx-font-size: 24px;" text="Entrada" textFill="WHITE" VBox.vgrow="ALWAYS">
+                  <Label style="-fx-font-size: 28px;" text="Entrada" textFill="WHITE" VBox.vgrow="ALWAYS">
                   </Label>
-                  <TextArea fx:id="txtInput" prefHeight="200.0" prefWidth="200.0" promptText="Ingresa tu código aquí" VBox.vgrow="ALWAYS">
+                  <TextArea fx:id="txtInput" prefHeight="200.0" prefWidth="200.0" promptText="Ingresa tu código aquí" style="-fx-font-size: 20;" VBox.vgrow="ALWAYS">
                   </TextArea>
                </children>
             </VBox>
             <VBox prefHeight="437.0" prefWidth="64.0" />
             <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="5.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label style="-fx-font-size: 24px;" text="Tabla de tokens" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="ALWAYS">
+                  <Label style="-fx-font-size: 28px;" text="Tabla de tokens" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="ALWAYS">
                   </Label>
-                  <TextArea fx:id="txtOutput" editable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                  <TextArea fx:id="txtOutput" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20;" VBox.vgrow="ALWAYS">
                   </TextArea>
                </children>
             </VBox>

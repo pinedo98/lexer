@@ -28,27 +28,26 @@ LorD = {LU}|{DU}
 %}
 %%
 
-Programa {lexeme=yytext(); return Prog;}
-VAR {lexeme=yytext(); return Var;}
-PROC {lexeme=yytext(); return Proc;}
-INICIO {lexeme=yytext(); return Inicio;}
-FIN {lexeme=yytext(); return Final;}
-ENTERO {lexeme=yytext(); return Entero;}
-REAL {lexeme=yytext(); return Real;}
-STRING {lexeme=yytext(); return String;}
-LIMPIAR {lexeme=yytext(); return Limpiar;}
-VEXY {lexeme=yytext(); return Vexy;}
-LEER {lexeme=yytext(); return Leer;}
-ESCRIBIR {lexeme=yytext(); return Escribir;}
-REPITE {lexeme=yytext(); return Repite;}
-HASTA {lexeme=yytext(); return Hasta;}
-MIENTRAS {lexeme=yytext(); return Mientras;}
-SI {lexeme=yytext(); return Si;}
-SINO {lexeme=yytext(); return SiNo;}
-EJECUTA {lexeme=yytext(); return Ejecuta;}
-AND {lexeme=yytext(); return And;}
-OR {lexeme=yytext(); return Or;}
-HOLA {lexeme=yytext(); return Hola;}
+programa {lexeme=yytext(); return programa;}
+inicio {lexeme=yytext(); return inicio;}
+fin {lexeme=yytext(); return fin;}
+entrada {lexeme=yytext(); return entrada;}
+salida {lexeme=yytext(); return salida;}
+entero {lexeme=yytext(); return entero;}
+real {lexeme=yytext(); return real;}
+cadena {lexeme=yytext(); return cadena;}
+si {lexeme=yytext(); return si;}
+sino {lexeme=yytext(); return sino;}
+entonces {lexeme=yytext(); return entonces;}
+mientras {lexeme=yytext(); return mientras;}
+repetir {lexeme=yytext(); return repetir;}
+hasta {lexeme=yytext(); return hasta;}
+limpiar {lexeme=yytext(); return limpiar;}
+ejecutar {lexeme=yytext(); return ejecutar;}
+posxy {lexeme=yytext(); return posxy;}
+proc {lexeme=yytext(); return proc;}
+
+
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
 "\\".* {lexeme=yytext(); return Comentario;}
@@ -59,15 +58,19 @@ HOLA {lexeme=yytext(); return Hola;}
 "-" {lexeme=yytext(); return Resta;}
 "*" {lexeme=yytext(); return Multiplicacion;}
 "/" {lexeme=yytext(); return Division;}
+"%" {lexeme=yytext(); return Modulo;}
 "=" {lexeme=yytext(); return Igual;}
 ">=" {lexeme=yytext(); return MayorIgual;}
 ">" {lexeme=yytext(); return Mayor;}
 "<=" {lexeme=yytext(); return MenorIgual;}
+"==" {lexeme=yytext(); return IgualIgual;}
 "<" {lexeme=yytext(); return Menor;}
-"<>" {lexeme=yytext(); return Diferente;}
+"!=" {lexeme=yytext(); return Diferente;}
 ";" {lexeme=yytext(); return PuntoYComa;}
 "]" {lexeme=yytext(); return CierraCorchete;}
 "[" {lexeme=yytext(); return AbreCorchete;}
+"}" {lexeme=yytext(); return CierraLlave;}
+"{" {lexeme=yytext(); return AbreLlave;}
 "," {lexeme=yytext(); return Coma;}
 "." {/* Ignore */}
 "\"" {/* Ignore */}
@@ -95,6 +98,7 @@ HOLA {lexeme=yytext(); return Hola;}
 "-""-"+ {lexeme=yytext(); return ERROR;}
 "/""/"+ {lexeme=yytext(); return ERROR;}
 "*""*"+ {lexeme=yytext(); return ERROR;}
+"%""%"+ {lexeme=yytext(); return ERROR;}
 "|" {lexeme=yytext(); return ERROR;}
 "&" {lexeme=yytext(); return ERROR;}
 "|" {lexeme=yytext(); return ERROR;}

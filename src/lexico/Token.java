@@ -51,10 +51,11 @@ public enum Token {
   Enteros(-52, -1),
   Reales(-53, -1),
   Cadena(-54, -1),
-  Rutina(-55,-1),
-  ConstanteEntera(-61, -1),
-  ConstanteReal(-62, -1),
-  ConsranteString(-63,-1),
+//  Rutina(-55,-1),
+
+//  ConstanteEntera(-61, -1),
+//  ConstanteReal(-62, -1),
+//  ConstanteString(-63,-1),
 
   LogicoAND(-42, -1),
   LogicoOR(-41, -1),
